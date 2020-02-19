@@ -3,6 +3,6 @@ variable "name" {
 }
 
 variable "trust_accounts" {
-  type        = "list"
+  type        = list(string)
   description = "Accounts to trust and allow ECR fetch"
 }
