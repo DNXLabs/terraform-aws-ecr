@@ -4,6 +4,29 @@
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-ecr)](https://github.com/DNXLabs/terraform-aws-ecr/blob/master/LICENSE)
 
 <!--- BEGIN_TF_DOCS --->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.20 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| aws | n/a |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| name | Name for ECR repository | `any` | n/a | yes |
+| trust\_accounts | Accounts to trust and allow ECR fetch | `list(string)` | n/a | yes |
+
+## Outputs
+
+No output.
+
 <!--- END_TF_DOCS --->
 
 ## Authors
