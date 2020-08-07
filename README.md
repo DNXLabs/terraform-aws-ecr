@@ -1,5 +1,21 @@
 # terraform-aws-ecr
 
+terraform-aws-ecr creates an Amazon Web Services (AWS) Elastic Container Registry (ECR) repository.
+
+This module requires:
+ * Terraform Version >=0.12.20
+
+This module defines:
+
+ * ECR policies 
+ * Create a ECR lifecyle
+    - Expire images older than 14 days
+    - Expire images with feature tag
+    - Expire images with the same tag
+
+ 
+
+
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-ecr/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-ecr/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-ecr)](https://github.com/DNXLabs/terraform-aws-ecr/blob/master/LICENSE)
 
