@@ -5,7 +5,7 @@
 
 This terraform modules creates an Amazon Web Services (AWS) Elastic Container Registry (ECR) repository.
 
-This module defines:
+The following resources will be created:
 
  - ECR Repository
    - Set the Amazon ECR image scanning on push  = true
@@ -15,7 +15,6 @@ This module defines:
     - Expire images older than 14 days
     - Expire images with feature tag
     - Expire images with the same tag
-
 
 <!--- BEGIN_TF_DOCS --->
 
