@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-ecr/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-ecr/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-ecr)](https://github.com/DNXLabs/terraform-aws-ecr/blob/master/LICENSE)
 
-This terraform modules creates an Amazon Web Services (AWS) Elastic Container Registry (ECR) repository.
+This terraform module creates an Amazon Web Services (AWS) Elastic Container Registry (ECR) repository.
 
 The following resources will be created:
 
