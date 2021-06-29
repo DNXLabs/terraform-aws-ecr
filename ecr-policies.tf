@@ -16,7 +16,8 @@ resource "aws_ecr_repository_policy" "default" {
       "Action": [
         "ecr:GetDownloadUrlForLayer",
         "ecr:BatchGetImage",
-        "ecr:BatchCheckLayerAvailability"
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:DescribeImageScanFindings"
       ]
     },
     {
