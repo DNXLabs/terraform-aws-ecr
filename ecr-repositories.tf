@@ -4,4 +4,11 @@ resource "aws_ecr_repository" "default" {
   image_scanning_configuration {
     scan_on_push = true
   }
+
+  encryption_configuration {
+    encryption_type = "KMS"
+    kms_key         = try(aws_kms_key.ecr[0].arn, false) ? aws_kms_key.ecr[0].arn : null
+  }
+
+  depends_on = [aws_kms_alias.ecr]
 }
