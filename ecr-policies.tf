@@ -41,4 +41,6 @@ resource "aws_ecr_repository_policy" "default" {
   ]
 }
 EOF
+
+  depends_on = [aws_ecr_repository.default]
 }
