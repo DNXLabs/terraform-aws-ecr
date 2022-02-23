@@ -7,7 +7,7 @@ resource "aws_ecr_repository" "default" {
 
   encryption_configuration {
     encryption_type = "KMS"
-    kms_key         = try(aws_kms_key.ecr[0].arn, false) ? aws_kms_key.ecr[0].arn : null
+    kms_key         = try(var.ecr_cmk_encryption, false) ? aws_kms_key.ecr[0].arn : null
   }
 
   depends_on = [aws_kms_alias.ecr]
