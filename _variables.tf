@@ -7,8 +7,7 @@ variable "trust_accounts" {
   description = "Accounts to trust and allow ECR fetch"
 }
 
-variable "ecr_cmk_encryption" {
-  type        = bool
-  description = "Enabled KMS CMK encryption for ECR repository"
-  default     = false
+variable "kms_key_arn" {
+  type        = string
+  description = "KMS Key ARN to use a CMK instead of default key"
 }
