@@ -34,7 +34,7 @@ The following resources will be created:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| ecr\_cmk\_encryption | Enabled KMS CMK encryption for ECR repository | `bool` | `false` | no |
+| kms\_key\_arn | KMS Key ARN to use a CMK instead of default key | `string` | n/a | yes |
 | name | Name for ECR repository | `any` | n/a | yes |
 | trust\_accounts | Accounts to trust and allow ECR fetch | `list(string)` | n/a | yes |
 
