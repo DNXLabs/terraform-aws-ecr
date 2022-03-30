@@ -40,7 +40,11 @@ The following resources will be created:
 
 ## Outputs
 
-No output.
+| Name | Description |
+|------|-------------|
+| ecr\_arn | n/a |
+| ecr\_name | n/a |
+| ecr\_url | n/a |
 
 <!--- END_TF_DOCS --->
 
