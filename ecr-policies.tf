@@ -37,6 +37,26 @@ resource "aws_ecr_repository_policy" "default" {
         "ecr:UploadLayerPart",
         "ecr:CompleteLayerUpload"
       ]
+    },
+    {
+      "Sid": "LambdaECRImageCrossAccountRetrievalPolicy",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "lambda.amazonaws.com"
+        ]
+      },
+      "Action": [
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:sourceArn": [
+            ${join(",", formatlist("\"arn:aws:lambda:%s:%s:function:*\"", data.aws_region.current.name, var.trust_accounts))}
+          ]
+        }
+      }
     }
   ]
 }
