@@ -34,8 +34,10 @@ The following resources will be created:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| image\_tag\_mutability | The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"MUTABLE"` | no |
 | kms\_key\_arn | KMS Key ARN to use a CMK instead of default key | `string` | n/a | yes |
 | name | Name for ECR repository | `any` | n/a | yes |
+| tags | Map of tags that will be added to created resources. By default resources will be tagged with name and environment. | `map(string)` | `{}` | no |
 | trust\_accounts | Accounts to trust and allow ECR fetch | `list(string)` | n/a | yes |
 
 ## Outputs
