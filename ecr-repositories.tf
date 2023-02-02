@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "default" {
-  name = var.name
+  name                 = var.name
   image_tag_mutability = var.image_tag_mutability
 
   encryption_configuration {
@@ -7,10 +7,10 @@ resource "aws_ecr_repository" "default" {
     kms_key         = length(var.kms_key_arn) > 0 ? var.kms_key_arn : ""
   }
 
-tags = merge(
+  tags = merge(
     var.tags,
     {
-      "Name"    = "${var.name}"
+      "Name" = "${var.name}"
     },
   )
 

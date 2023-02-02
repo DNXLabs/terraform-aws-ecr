@@ -15,7 +15,7 @@ variable "kms_key_arn" {
 variable "image_tag_mutability" {
   type        = string
   description = "The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE."
-  default = "MUTABLE"
+  default     = "MUTABLE"
 }
 
 variable "tags" {
