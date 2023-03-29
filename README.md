@@ -11,10 +11,7 @@ The following resources will be created:
    - Set the Amazon ECR image scanning on push  = true
       - Amazon ECR image scanning helps in identifying software vulnerabilities in your container images.
  - ECR policies
- - Create a ECR lifecyle
-    - Expire images older than 14 days
-    - Expire images with feature tag
-    - Expire images with the same tag
+ - ECR lifecyle
 
 <!--- BEGIN_TF_DOCS --->
 
