@@ -11,10 +11,7 @@ The following resources will be created:
    - Set the Amazon ECR image scanning on push  = true
       - Amazon ECR image scanning helps in identifying software vulnerabilities in your container images.
  - ECR policies
- - Create a ECR lifecyle
-    - Expire images older than 14 days
-    - Expire images with feature tag
-    - Expire images with the same tag
+ - ECR lifecyle
 
 <!--- BEGIN_TF_DOCS --->
 
@@ -35,8 +32,10 @@ The following resources will be created:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | image\_tag\_mutability | The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"MUTABLE"` | no |
-| kms\_key\_arn | KMS Key ARN to use a CMK instead of default key | `string` | n/a | yes |
+| kms\_key\_arn | KMS Key ARN to use a CMK instead of default key | `string` | `""` | no |
+| lifecycle\_policy | JSON formatted string ECR repository lifecycle policy. | `string` | `""` | no |
 | name | Name for ECR repository | `any` | n/a | yes |
+| scan\_on\_push | Configuration block that defines image scanning configuration for the repository. | `bool` | `true` | no |
 | tags | Map of tags that will be added to created resources. By default resources will be tagged with name and environment. | `map(string)` | `{}` | no |
 | trust\_accounts | Accounts to trust and allow ECR fetch | `list(string)` | n/a | yes |
 
