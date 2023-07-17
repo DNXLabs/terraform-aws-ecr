@@ -36,3 +36,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "extra_repository_policies_arn" {
+  type = list(string)
+  default = []
+}

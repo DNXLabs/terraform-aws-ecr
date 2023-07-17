@@ -1,7 +1,12 @@
-
 resource "aws_ecr_repository_policy" "default" {
   repository = aws_ecr_repository.default.name
   policy     = data.aws_iam_policy_document.default.json
+}
+
+resource "aws_ecr_repository_policy" "extra_repository_policies" {
+  for_each   = toset(try(var.extra_repository_policies_arn, []))
+  repository = aws_ecr_repository.default.name
+  policy_arn = each.key
 }
 
 data "aws_iam_policy_document" "default" {
