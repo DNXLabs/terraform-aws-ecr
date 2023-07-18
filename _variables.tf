@@ -37,7 +37,7 @@ variable "tags" {
   default     = {}
 }
 
-variable "extra_repository_policies_arn" {
+variable "allow_write_extra_arns" {
   type = list(string)
   default = []
 }

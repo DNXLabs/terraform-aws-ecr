@@ -3,12 +3,6 @@ resource "aws_ecr_repository_policy" "default" {
   policy     = data.aws_iam_policy_document.default.json
 }
 
-resource "aws_ecr_repository_policy" "extra_repository_policies" {
-  for_each   = toset(try(var.extra_repository_policies_arn, []))
-  repository = aws_ecr_repository.default.name
-  policy_arn = each.key
-}
-
 data "aws_iam_policy_document" "default" {
   dynamic "statement" {
     for_each = length(try(var.trust_accounts, [])) > 0 ? [1] : []
@@ -37,7 +31,10 @@ data "aws_iam_policy_document" "default" {
 
     principals {
       type        = "AWS"
-      identifiers = ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"]
+      identifiers = concat(
+        ["arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"],
+        formatlist("arn:aws:iam::%s:root", var.trust_accounts)
+      )
     }
 
     actions = [
