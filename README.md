@@ -31,6 +31,7 @@ The following resources will be created:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| encryption\_type | Encryption type, KMS or AES256. When kms\_key\_arn is passed, encryption\_type is always KMS | `string` | `"KMS"` | no |
 | image\_tag\_mutability | The tag mutability setting for the repository. Must be one of: MUTABLE or IMMUTABLE. Defaults to MUTABLE. | `string` | `"MUTABLE"` | no |
 | kms\_key\_arn | KMS Key ARN to use a CMK instead of default key | `string` | `""` | no |
 | lifecycle\_policy | JSON formatted string ECR repository lifecycle policy. | `string` | `""` | no |

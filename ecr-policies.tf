@@ -21,7 +21,8 @@ data "aws_iam_policy_document" "default" {
         "ecr:GetDownloadUrlForLayer",
         "ecr:BatchGetImage",
         "ecr:BatchCheckLayerAvailability",
-        "ecr:DescribeImageScanFindings"
+        "ecr:DescribeImageScanFindings",
+        "ecr:ListImages"
       ]
     }
   }
