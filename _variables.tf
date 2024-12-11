@@ -7,6 +7,12 @@ variable "trust_accounts" {
   description = "Accounts to trust and allow ECR fetch"
 }
 
+variable "encryption_type" {
+  type        = string
+  description = "Encryption type, KMS or AES256. When kms_key_arn is passed, encryption_type is always KMS"
+  default     = "KMS"
+}
+
 variable "kms_key_arn" {
   type        = string
   description = "KMS Key ARN to use a CMK instead of default key"
